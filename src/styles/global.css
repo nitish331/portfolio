@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/* ───────── Design tokens (Aurora Glass) ─────────
+   Every colour / font here becomes a Tailwind utility:
+   --color-violet → bg-violet, text-violet, border-violet …
+   --font-display → font-display */
+@theme {
+  --color-night: #070a1a;
+  --color-panel: #0c1029;
+  --color-ink: #f1f3ff;
+  --color-soft: #c6cbe4;
+  --color-muted: #a7adc9;
+  --color-on-accent: #060818;
+
+  --color-violet: #7c5cff;
+  --color-violet-light: #a78bfa;
+  --color-cyan: #22d3ee;
+  --color-cyan-light: #67e8f9;
+  --color-pink: #f472b6;
+  --color-pink-light: #f9a8d4;
+  --color-amber: #fbbf24;
+  --color-amber-light: #fcd34d;
+  --color-mint: #34d399;
+
+  --font-display: "Sora", "Manrope", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-shimmer: shimmer 8s linear infinite;
+  --animate-twinkle: twinkle 3s ease-in-out infinite;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-ping-soft: ping-soft 1.6s ease-out infinite;
+
+  @keyframes shimmer {
+    to {
+      background-position: 300% 0;
+    }
+  }
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes ping-soft {
+    0% {
+      box-shadow: 0 0 0 0 rgb(52 211 153 / 0.6);
+    }
+    100% {
+      box-shadow: 0 0 0 12px rgb(52 211 153 / 0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-night font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: rgb(124 92 255 / 0.45);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+/* ───────── Reusable effects ───────── */
+
+/* Page container: 1240px max, 16px gutter on phones */
+@utility wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 48px);
+}
+
+/* Frosted glass surface */
+@utility glass {
+  background: rgb(255 255 255 / 0.055);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Dark panel with a violet → cyan → pink gradient border */
+@utility gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-panel), var(--color-panel)) padding-box,
+    linear-gradient(135deg, var(--color-violet), var(--color-cyan) 50%, var(--color-pink)) border-box;
+}
+
+/* Shimmering aurora text */
+@utility gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #22d3ee, #f472b6, #a78bfa);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Gold variant, used for ranks */
+@utility gold-text {
+  background: linear-gradient(90deg, #fde68a, #fbbf24, #f472b6, #fde68a);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Hollow outlined text (big numbers, footer wordmark) */
+@utility outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.22);
+}
+
+/* Buttons */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding-inline: 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition:
+    transform 0.25s var(--ease-out-soft),
+    box-shadow 0.25s var(--ease-out-soft),
+    background-color 0.25s;
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@utility btn-grad {
+  background: linear-gradient(135deg, var(--color-violet), var(--color-cyan));
+  color: var(--color-on-accent);
+  box-shadow: 0 10px 40px -10px rgb(124 92 255 / 0.8);
+  &:hover {
+    box-shadow: 0 16px 50px -8px rgb(34 211 238 / 0.8);
+  }
+}
+
+@utility btn-glass {
+  background: rgb(255 255 255 / 0.055);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: var(--color-ink);
+  &:hover {
+    background: rgb(255 255 255 / 0.1);
+  }
+}
+
+/* Small pill label */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e3e6fa;
+}
+
+/* Respect "reduce motion" system setting everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
