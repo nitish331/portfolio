@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import Button from '../../components/ui/Button.jsx';
 import Icon from '../../components/ui/Icon.jsx';
+import MaskedLine from '../../components/ui/MaskedLine.jsx';
 import { PROFILE } from '../../data/profile.js';
 import { SITE } from '../../data/site.js';
 import PortraitCollage from './PortraitCollage.jsx';
@@ -13,23 +14,6 @@ const SOCIALS = [
   { label: 'LinkedIn', icon: 'linkedin', href: SITE.linkedin },
   { label: 'Email', icon: 'mail', href: `mailto:${SITE.email}` },
 ];
-
-// One headline line that slides up out of a mask.
-function HeadlineLine({ delay, children }) {
-  const reduceMotion = useReducedMotion();
-  return (
-    <span className="block overflow-hidden pb-[0.08em]">
-      <motion.span
-        className="inline-block"
-        initial={reduceMotion ? false : { y: '110%' }}
-        animate={{ y: '0%' }}
-        transition={{ delay, duration: 1, ease: EASE }}
-      >
-        {children}
-      </motion.span>
-    </span>
-  );
-}
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
@@ -49,8 +33,8 @@ export default function Hero() {
         </motion.span>
 
         <h1 className="font-display text-[clamp(54px,8vw,108px)] leading-[0.95] font-extrabold tracking-[-0.05em]">
-          <HeadlineLine delay={0.05}>{headline.before}</HeadlineLine>
-          <HeadlineLine delay={0.17}>
+          <MaskedLine delay={0.05}>{headline.before}</MaskedLine>
+          <MaskedLine delay={0.17}>
             <span className="relative inline-block">
               <span className="gradient-text pr-[0.04em]">{headline.accent}</span>
               <svg aria-hidden="true" viewBox="0 0 300 30" preserveAspectRatio="none" className="absolute bottom-0 left-0 h-[0.2em] w-full">
@@ -73,8 +57,8 @@ export default function Hero() {
                 />
               </svg>
             </span>
-          </HeadlineLine>
-          <HeadlineLine delay={0.29}>{headline.after}</HeadlineLine>
+          </MaskedLine>
+          <MaskedLine delay={0.29}>{headline.after}</MaskedLine>
         </h1>
 
         <motion.p className="text-[clamp(20px,2.2vw,26px)] leading-snug font-bold" {...rise(0.35)}>
