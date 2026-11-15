@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
 import Layout from './components/Layout.jsx';
 import PageTransition from './components/PageTransition.jsx';
 import Home from './pages/Home.jsx';
@@ -41,10 +41,14 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <AnimatedRoutes />
-      </Layout>
-    </BrowserRouter>
+    // reducedMotion="user": people with "reduce motion" switched on in their OS
+    // get fades instead of movement, everywhere, automatically.
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <Layout>
+          <AnimatedRoutes />
+        </Layout>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }

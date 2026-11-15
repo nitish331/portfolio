@@ -30,6 +30,8 @@ export const ABOUT = {
     { label: 'Based in', value: PROFILE.location, icon: 'pin', accent: 'amber' },
   ],
   highlight: { value: '200+', label: 'learners mentored in DSA & React at Coding Ninjas' },
+  // Candid photo (campus, lab, on stage): import it like PROFILE.photo. Null shows a placeholder.
+  candidPhoto: null,
 };
 
 export const EXPERTISE = [

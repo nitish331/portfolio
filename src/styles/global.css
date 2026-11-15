@@ -188,6 +188,60 @@
   color: #e3e6fa;
 }
 
+/* Small rounded label inside cards (project kind, mockup buttons) */
+@utility tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-soft);
+}
+
+/* Mono tech-stack label */
+@utility stack-tag {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-soft);
+}
+
+/* Typing dots in chat mockups: <span class="typing-dot" style="animation-delay:.2s"> */
+.typing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: typing 1.2s infinite;
+}
+@keyframes typing {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* Project showcase timer bar */
+.progress-fill {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: progress linear forwards;
+}
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* Endless scrolling strip (see components/ui/Marquee.jsx) */
 .marquee {
   display: flex;
