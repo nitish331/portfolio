@@ -1,8 +1,10 @@
 // Journey page, newest first. type: 'education' | 'research' | 'experience'.
+// accent: colour of the dot, year and highlights (see data/accents.js).
 
 export const TIMELINE = [
   {
     id: 'msc',
+    accent: 'violet',
     type: 'education',
     when: '2024 —',
     whenSub: 'Present',
@@ -26,6 +28,7 @@ export const TIMELINE = [
   },
   {
     id: 'thesis',
+    accent: 'amber',
     type: 'research',
     when: 'Now',
     whenSub: 'Ongoing research',
@@ -41,6 +44,7 @@ export const TIMELINE = [
   },
   {
     id: 'coding-ninjas',
+    accent: 'pink',
     type: 'experience',
     when: '2024',
     whenSub: 'Jul — Sep',
@@ -59,6 +63,7 @@ export const TIMELINE = [
   },
   {
     id: 'bsc',
+    accent: 'cyan',
     type: 'education',
     when: '2023',
     whenSub: 'Graduated',
@@ -69,6 +74,7 @@ export const TIMELINE = [
   },
   {
     id: 'class-12',
+    accent: 'violet',
     type: 'education',
     when: '2020',
     whenSub: 'Senior secondary',
@@ -78,6 +84,7 @@ export const TIMELINE = [
   },
   {
     id: 'class-10',
+    accent: 'amber',
     type: 'education',
     when: '2018',
     whenSub: 'Where it started',

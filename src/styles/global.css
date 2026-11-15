@@ -230,6 +230,19 @@
   }
 }
 
+/* Pulsing ring around the current timeline dot */
+.ping-violet {
+  animation: ping-violet 1.8s ease-out 1s infinite;
+}
+@keyframes ping-violet {
+  0% {
+    box-shadow: 0 0 0 0 rgb(124 92 255 / 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgb(124 92 255 / 0);
+  }
+}
+
 /* Project showcase timer bar */
 .progress-fill {
   transform: scaleX(0);

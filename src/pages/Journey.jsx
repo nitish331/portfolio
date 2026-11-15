@@ -1,13 +1,14 @@
-import PagePlaceholder from '../components/PagePlaceholder.jsx';
+import { TIMELINE } from '../data/timeline.js';
+import JourneyCta from '../sections/journey/JourneyCta.jsx';
+import JourneyHeader from '../sections/journey/JourneyHeader.jsx';
+import Timeline from '../sections/journey/Timeline.jsx';
 
 export default function Journey() {
   return (
-    <PagePlaceholder
-      eyebrow="Education · Research · Experience"
-      title="The journey"
-      accent="so far."
-      description="An alternating timeline whose glowing line draws itself as you scroll."
-      step="7"
-    />
+    <>
+      <JourneyHeader />
+      <Timeline entries={TIMELINE} />
+      <JourneyCta />
+    </>
   );
 }
