@@ -93,11 +93,13 @@
 }
 
 /* Frosted glass surface */
+/* (prefixed line first: the minifier keeps the last of the pair, and Chrome
+   needs the unprefixed one) */
 @utility glass {
   background: rgb(255 255 255 / 0.055);
   border: 1px solid rgb(255 255 255 / 0.12);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
 }
 
 /* Dark panel with a violet → cyan → pink gradient border */
@@ -166,8 +168,8 @@
 @utility btn-glass {
   background: rgb(255 255 255 / 0.055);
   border: 1px solid rgb(255 255 255 / 0.12);
-  backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   color: var(--color-ink);
   &:hover {
     background: rgb(255 255 255 / 0.1);

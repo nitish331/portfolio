@@ -11,6 +11,10 @@ export const PROFILE = {
   badge: 'FULL-STACK • GEN AI • DEEP LEARNING • ',
   stickers: ['IIT Delhi', 'GenAI · LangGraph', 'React + Node', 'TensorFlow'],
   location: '[YOUR CITY], India',
+  // Hero portrait: put the file in src/assets/ and import it here, e.g.
+  //   import portrait from '../assets/portrait.webp';  …  photo: portrait,
+  // Until then the hero shows a labelled placeholder.
+  photo: null,
 };
 
 export const ABOUT = {
