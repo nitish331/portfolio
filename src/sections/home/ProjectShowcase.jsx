@@ -7,6 +7,7 @@ import { Reveal } from '../../components/ui/Reveal.jsx';
 import SectionHeading from '../../components/ui/SectionHeading.jsx';
 import { PROJECTS } from '../../data/projects.js';
 
+const SHOWCASE = PROJECTS.filter((project) => project.featured);
 const SLIDE_SECONDS = 6;
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -23,8 +24,8 @@ export default function ProjectShowcase() {
 
   const autoplay = !reduceMotion;
   const paused = hovered || focused || !inView;
-  const project = PROJECTS[index];
-  const go = (i) => setIndex((i + PROJECTS.length) % PROJECTS.length);
+  const project = SHOWCASE[index];
+  const go = (i) => setIndex((i + SHOWCASE.length) % SHOWCASE.length);
 
   return (
     <section aria-roledescription="carousel" aria-label="Selected projects" className="wrap relative flex flex-col gap-8 pt-36">
@@ -47,7 +48,7 @@ export default function ProjectShowcase() {
         >
           {/* Accordion */}
           <div className="flex min-w-0 flex-[1_1_420px] flex-col p-[clamp(20px,3vw,36px)]">
-            {PROJECTS.map((item, i) => {
+            {SHOWCASE.map((item, i) => {
               const open = i === index;
               return (
                 <div key={item.id} className="border-b border-white/10">
@@ -135,14 +136,14 @@ export default function ProjectShowcase() {
               </motion.div>
             </AnimatePresence>
             <span className="glass absolute top-[22px] left-6 rounded-full px-3 py-1.5 font-mono text-xs">
-              {pad(index + 1)} / {pad(PROJECTS.length)}
+              {pad(index + 1)} / {pad(SHOWCASE.length)}
             </span>
           </div>
         </div>
       </Reveal>
 
       <div role="group" aria-label="Choose a project" className="flex justify-center gap-3">
-        {PROJECTS.map((item, i) => (
+        {SHOWCASE.map((item, i) => (
           <button
             key={item.id}
             type="button"

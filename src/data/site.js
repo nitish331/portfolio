@@ -2,15 +2,15 @@
 
 export const SITE = {
   name: 'Nitish',
-  defaultTitle: 'Nitish — Full-Stack, Generative AI & ML Developer',
+  defaultTitle: 'Nitish — Software Engineer · Full-Stack, Generative AI & ML',
   description:
-    'Nitish — full-stack developer, Generative AI engineer and ML & deep-learning developer. M.Sc at IIT Delhi, GATE 2025 AIR 36.',
+    'Nitish — Software Development Engineer at Infinite Locus. Full-stack, Generative AI (Gemini, LangGraph, RAG) and ML & deep learning. M.Sc IIT Delhi, GATE 2025 AIR 36.',
   // Live address of the site, set once it is deployed (Step 10), e.g. 'https://nitish.dev'.
   url: '',
-  email: '[your.email@example.com]',
-  github: '#',
+  email: 'nitishkathuria33@gmail.com',
+  github: 'https://github.com/nitish331',
   linkedin: '#',
-  resume: '#',
+  resume: 'https://drive.google.com/file/d/19fvFgc-nUBxcwVoBOY59jNp1lmNF4JrG/view?usp=sharing',
 };
 
 export const NAV_LINKS = [

@@ -23,7 +23,7 @@ export default function RoleTicker({ roles, interval = 2600 }) {
             {role}
           </span>
         ))}
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence initial={false}>
           <motion.span
             key={roles[index]}
             className="col-start-1 row-start-1 whitespace-nowrap text-cyan-light"

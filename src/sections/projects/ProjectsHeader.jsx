@@ -31,7 +31,7 @@ export default function ProjectsHeader({ count, children }) {
           </MaskedLine>
         </h1>
         <motion.p className="max-w-[600px] text-[19px] leading-[1.65] text-muted" {...rise(0.25)}>
-          Banking platforms, AI research assistants, real-time chat and the deep-learning simulator behind my thesis.
+          Document AI running in production, a digital bank, real-time chat, NLP models and the ML simulator behind my thesis.
           Pick a lane:
         </motion.p>
         <motion.div {...rise(0.4)}>{children}</motion.div>

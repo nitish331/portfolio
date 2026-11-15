@@ -1,18 +1,22 @@
 // Skill groups (Achievements → Toolbox) and the scrolling marquees.
 
 export const SKILL_GROUPS = [
-  { title: 'Languages', accent: 'violet', items: ['C++', 'Python', 'Java', 'JavaScript', 'SQL', 'HTML', 'CSS', 'Data structures & algorithms'] },
-  { title: 'Frontend', accent: 'cyan', items: ['React.js', 'Redux', 'React Query', 'React Router', 'TailwindCSS', 'Bootstrap', 'Chart.js', 'Axios'] },
-  { title: 'Backend & data stores', accent: 'pink', items: ['Node.js', 'Express.js', 'REST APIs', 'Socket.IO', 'FastAPI', 'MongoDB', 'MySQL', 'Supabase'] },
-  { title: 'Generative AI', accent: 'amber', items: ['LangChain', 'LangGraph', 'LangSmith', 'RAG pipelines', 'LLM tooling', 'Streamlit'] },
-  { title: 'ML, DL & data', accent: 'mint', items: ['TensorFlow', 'Deep learning', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Plotly', 'Power BI'] },
-  { title: 'Tools & platforms', accent: null, items: ['Git', 'GitHub', 'Docker', 'Heroku', 'Postman', 'VS Code', 'Jupyter', 'Google Colab'] },
+  { title: 'Languages', accent: 'violet', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'SQL', 'HTML', 'CSS'] },
+  { title: 'Frontend', accent: 'cyan', items: ['React.js', 'Redux', 'React Query', 'React Router', 'Tailwind CSS', 'Bootstrap', 'Chart.js', 'Axios'] },
+  { title: 'Backend', accent: 'pink', items: ['Node.js', 'Express.js', 'FastAPI', 'REST APIs', 'Socket.IO', 'JWT', 'Passport.js'] },
+  {
+    title: 'Generative AI',
+    accent: 'amber',
+    items: ['Google Gemini', 'OpenAI', 'Multimodal document AI / OCR', 'RAG pipelines', 'LangChain', 'LangGraph', 'LangSmith', 'Prompt engineering', 'Embeddings'],
+  },
+  { title: 'ML & data', accent: 'mint', items: ['TensorFlow', 'Keras', 'Scikit-learn', 'NLP', 'Deep learning', 'NumPy', 'Pandas', 'Matplotlib', 'Plotly', 'Power BI', 'Streamlit'] },
+  { title: 'Databases & tools', accent: null, items: ['MongoDB', 'MySQL', 'Supabase', 'Git', 'GitHub', 'Docker', 'Postman', 'Heroku', 'VS Code', 'Jupyter'] },
 ];
 
 // Home: glass chips row + big gradient words row.
-export const MARQUEE_TECH = ['React', 'Node.js', 'LangGraph', 'MongoDB', 'TensorFlow', 'Socket.IO', 'Python', 'C++', 'Redux', 'LangChain'];
-export const MARQUEE_THEMES = ['Full-stack apps', 'Generative AI', 'Deep learning', 'RAG pipelines', 'Real-time systems'];
+export const MARQUEE_TECH = ['React', 'TypeScript', 'Node.js', 'Python', 'Google Gemini', 'LangGraph', 'MongoDB', 'TensorFlow', 'Socket.IO', 'FastAPI'];
+export const MARQUEE_THEMES = ['Full-stack apps', 'Generative AI', 'Document AI', 'Deep learning', 'RAG pipelines', 'Real-time systems'];
 
 // Achievements: solid gradient pills + outlined pills.
-export const TOOLBOX_PRIMARY = ['React', 'Python', 'LangChain', 'Node.js', 'TensorFlow', 'C++', 'MongoDB'];
-export const TOOLBOX_SECONDARY = ['Redux', 'LangGraph', 'Socket.IO', 'Supabase', 'Docker', 'FastAPI', 'NumPy'];
+export const TOOLBOX_PRIMARY = ['React', 'Python', 'Gemini', 'TypeScript', 'TensorFlow', 'Node.js', 'LangGraph'];
+export const TOOLBOX_SECONDARY = ['Redux', 'LangChain', 'Socket.IO', 'Supabase', 'Docker', 'FastAPI', 'Keras', 'Scikit-learn'];

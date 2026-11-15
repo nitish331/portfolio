@@ -86,7 +86,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
       {stickers.map((label, i) => (
         <motion.span
           key={label}
-          className={`glass chip absolute text-sm ${STICKER_SPOTS[i % STICKER_SPOTS.length]}`}
+          className={`chip absolute border border-white/14 bg-panel/90 backdrop-blur-md text-sm shadow-[0_12px_30px_-12px_rgba(0,0,0,.6)] ${STICKER_SPOTS[i % STICKER_SPOTS.length]}`}
           animate={reduceMotion ? undefined : { y: [0, -14, 0] }}
           transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: i * 1.5 }}
         >
