@@ -186,6 +186,35 @@
   color: #e3e6fa;
 }
 
+/* Endless scrolling strip (see components/ui/Marquee.jsx) */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  flex: none;
+  width: max-content;
+  animation: marquee linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--marquee-gap, 14px);
+  padding-right: var(--marquee-gap, 14px);
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Respect "reduce motion" system setting everywhere */
 @media (prefers-reduced-motion: reduce) {
   *,

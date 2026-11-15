@@ -1,0 +1,76 @@
+// National ranks. Numeric `value`s count up on screen; `text` is shown as-is.
+
+export const RANKS = [
+  {
+    id: 'gate',
+    exam: 'GATE 2025',
+    value: 36,
+    prefix: '#',
+    label: 'All-India Rank',
+    meta: '2025',
+    description: 'All-India Rank among thousands of candidates nationwide.',
+    accent: 'amber',
+    icon: 'star',
+  },
+  {
+    id: 'csir-net',
+    exam: 'CSIR-UGC NET',
+    value: 86,
+    prefix: '#',
+    label: 'AIR · with JRF',
+    meta: 'JRF',
+    description: 'Qualified with Junior Research Fellowship.',
+    accent: 'violet',
+    icon: 'cap',
+  },
+  {
+    id: 'jam',
+    exam: 'IIT JAM 2024',
+    value: 90,
+    prefix: '#',
+    label: 'All-India Rank',
+    meta: '2024',
+    description: 'All-India Rank, opening the door to IIT Delhi.',
+    accent: 'cyan',
+    icon: 'trending',
+  },
+  {
+    id: 'jest',
+    exam: 'JEST 2023',
+    value: 382,
+    prefix: '#',
+    label: 'All-India Rank',
+    meta: '2023',
+    description: 'Joint Entrance Screening Test for research programmes.',
+    accent: 'pink',
+    icon: 'target',
+  },
+  {
+    id: 'ngpe',
+    exam: 'NGPE 2023',
+    text: 'Top 1%',
+    label: 'National top 1%',
+    meta: 'IAPT · 2023',
+    description: 'National Graduate Physics Examination, national top 1%.',
+    accent: 'mint',
+    icon: 'burst',
+  },
+  {
+    id: 'dept-rank',
+    exam: 'Department rank',
+    text: 'Rank 3',
+    label: 'IIT Delhi',
+    meta: 'IIT Delhi',
+    description: 'For strong, consistent performance across semesters.',
+    accent: 'rainbow',
+    icon: 'rank',
+  },
+];
+
+// The four tiles on the Home page.
+export const HOME_STATS = [
+  { id: 'gate', eyebrow: 'GATE 2025', value: 36, prefix: '#', label: 'All-India Rank', accent: 'violet' },
+  { id: 'csir-net', eyebrow: 'CSIR-UGC NET', value: 86, prefix: '#', label: 'AIR · with JRF', accent: 'cyan' },
+  { id: 'jam', eyebrow: 'IIT JAM 2024', value: 90, prefix: '#', label: 'All-India Rank', accent: 'pink' },
+  { id: 'cgpa', eyebrow: 'IIT Delhi · M.Sc', value: 9.35, decimals: 2, label: 'CGPA · Dept. Rank 3', accent: 'amber', featured: true },
+];
