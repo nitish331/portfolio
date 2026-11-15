@@ -77,6 +77,10 @@
   a {
     color: inherit;
   }
+  /* Anchored sections stop below the sticky navbar */
+  [id] {
+    scroll-margin-top: 110px;
+  }
 }
 
 /* ───────── Reusable effects ───────── */
