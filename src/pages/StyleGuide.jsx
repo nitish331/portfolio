@@ -8,6 +8,7 @@ import Icon, { ICON_NAMES } from '../components/ui/Icon.jsx';
 import Marquee from '../components/ui/Marquee.jsx';
 import { Reveal, RevealGroup, RevealItem } from '../components/ui/Reveal.jsx';
 import SectionHeading from '../components/ui/SectionHeading.jsx';
+import usePageMeta from '../components/usePageMeta.js';
 import { accent } from '../data/accents.js';
 import { HOME_STATS, RANKS } from '../data/achievements.js';
 import { CERTIFICATES } from '../data/certificates.js';
@@ -42,6 +43,7 @@ const DATA_SUMMARY = [
 ];
 
 export default function StyleGuide() {
+  usePageMeta({ title: 'Design system', noindex: true });
   return (
     <div className="wrap flex flex-col gap-28 py-20">
       <header className="flex flex-col items-start gap-6">

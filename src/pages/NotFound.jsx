@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import usePageMeta from '../components/usePageMeta.js';
 
 export default function NotFound() {
+  usePageMeta({ title: 'Page not found', noindex: true });
   return (
     <section className="wrap flex min-h-[70vh] flex-col items-start justify-center gap-6 py-24">
       <span className="outline-text font-display text-[clamp(120px,22vw,280px)] leading-[0.8] font-extrabold tracking-[-0.06em]">404</span>

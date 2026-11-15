@@ -1,3 +1,4 @@
+import usePageMeta from '../components/usePageMeta.js';
 import About from '../sections/home/About.jsx';
 import Contact from '../sections/home/Contact.jsx';
 import Expertise from '../sections/home/Expertise.jsx';
@@ -8,6 +9,7 @@ import Research from '../sections/home/Research.jsx';
 import SkillStrips from '../sections/home/SkillStrips.jsx';
 
 export default function Home() {
+  usePageMeta({});
   return (
     <>
       <Hero />

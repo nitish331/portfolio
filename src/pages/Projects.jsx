@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import usePageMeta from '../components/usePageMeta.js';
 import { PROJECT_FILTERS, PROJECTS } from '../data/projects.js';
 import FilterPills from '../sections/projects/FilterPills.jsx';
 import ProjectRow from '../sections/projects/ProjectRow.jsx';
@@ -10,6 +11,11 @@ import ProjectsHeader from '../sections/projects/ProjectsHeader.jsx';
 const VALID = new Set(PROJECT_FILTERS.map((f) => f.id));
 
 export default function Projects() {
+  usePageMeta({
+    title: 'Projects',
+    description:
+      'Projects by Nitish: FinVerse digital bank, Smart ResearchMate RAG assistant, StayEase booking dashboard, ChatPulse real-time chat and a deep-learning CV-QKD simulator.',
+  });
   // The active filter lives in the URL (/projects?filter=ai) so a filtered view can be shared.
   const [params, setParams] = useSearchParams();
   const requested = params.get('filter');
