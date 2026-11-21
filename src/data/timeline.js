@@ -80,7 +80,7 @@ export const TIMELINE = [
     title: 'Bachelor of Science',
     org: 'Guru Jambheshwar University of Science & Technology, Hisar',
     badge: { value: '8.1', label: 'CGPA' },
-    chips: ['JEST 2023 · AIR 382', 'NGPE 2023 · National top 1%'],
+    chips: ['JEST 2023 · Rank 387', 'NGPE 2024 · National top 1%'],
   },
   {
     id: 'class-12',
