@@ -31,7 +31,7 @@ export default function About() {
           )}
         </div>
         <motion.div
-          className="glass absolute -right-3 -bottom-7 flex max-w-[260px] -rotate-3 flex-col gap-1 rounded-[22px] bg-panel/75 px-[22px] py-5"
+          className="absolute -right-3 -bottom-7 flex max-w-[260px] -rotate-3 flex-col gap-1 rounded-[22px] border border-white/14 bg-panel/92 px-[22px] py-5 shadow-[0_24px_50px_-20px_rgba(0,0,0,.7)] backdrop-blur-md"
           animate={{ y: [0, -14, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         >

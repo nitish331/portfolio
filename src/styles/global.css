@@ -77,6 +77,16 @@
   a {
     color: inherit;
   }
+  /* Body text is justified (flush left and right) site-wide. Hyphenation keeps
+     narrow phone columns free of big word gaps. A text-center / text-left class
+     on an element still wins, because utilities override this base rule. */
+  p,
+  li {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
   /* Anchored sections stop below the sticky navbar */
   [id] {
     scroll-margin-top: 110px;
