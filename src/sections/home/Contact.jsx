@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from '../../components/ui/Button.jsx';
 import { Reveal } from '../../components/ui/Reveal.jsx';
+import { PROFILE } from '../../data/profile.js';
 import { SITE } from '../../data/site.js';
 
 export default function Contact() {
@@ -22,8 +23,12 @@ export default function Contact() {
           transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Spinning "SAY HELLO" badge */}
-        <div aria-hidden="true" className="absolute right-[clamp(20px,6vw,80px)] bottom-[clamp(20px,5vw,64px)] size-[150px] max-md:hidden">
+        {/* Spinning "SAY HELLO" ring around the portrait: above the heading below
+            1024px, floating bottom-right on larger screens */}
+        <div
+          aria-hidden="true"
+          className="relative size-[150px] flex-none self-start lg:absolute lg:right-[clamp(20px,6vw,80px)] lg:bottom-[clamp(20px,5vw,64px)] lg:size-[210px]"
+        >
           <motion.svg
             viewBox="0 0 200 200"
             className="size-full"
@@ -37,7 +42,16 @@ export default function Contact() {
               <textPath href="#hello-circle">SAY HELLO • SAY HELLO • SAY HELLO • </textPath>
             </text>
           </motion.svg>
-          <span className="absolute inset-[50px] rounded-full" style={{ background: 'conic-gradient(#7C5CFF, #22D3EE, #F472B6, #7C5CFF)' }} />
+          <span
+            className="absolute inset-[19%] rounded-full p-[3px] shadow-[0_20px_50px_-15px_rgba(124,92,255,.8)]"
+            style={{ background: 'conic-gradient(#7C5CFF, #22D3EE, #F472B6, #7C5CFF)' }}
+          >
+            {PROFILE.photo ? (
+              <img src={PROFILE.photo} alt="" className="size-full rounded-full object-cover object-top" />
+            ) : (
+              <span className="block size-full rounded-full bg-panel" />
+            )}
+          </span>
         </div>
 
         <span className="glass chip relative self-start">Contact</span>
