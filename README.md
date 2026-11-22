@@ -30,3 +30,18 @@ Defined once in `src/styles/global.css` (`@theme`) and available as Tailwind cla
 
 Effect utilities: `wrap`, `glass`, `gradient-border`, `gradient-text`, `gold-text`, `outline-text`,
 `btn` + `btn-grad` / `btn-glass`, `chip`.
+
+## Deployment (Netlify)
+
+The site deploys from GitHub. Settings live in `netlify.toml`:
+build `npm run build`, publish `dist`, Node 22, a catch-all rewrite to
+`index.html` so `/projects`, `/journey` … work on refresh, long-term caching
+for `/assets/*` and basic security headers.
+
+Every push to `main` triggers a new deploy automatically.
+
+## Editing content
+
+All text lives in `src/data/` (profile, projects, timeline, achievements,
+skills, certificates, site links). Project buttons appear only when a real
+URL replaces `'#'` in `projects.js`.

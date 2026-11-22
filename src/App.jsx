@@ -1,13 +1,21 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, MotionConfig } from 'framer-motion';
 import Layout from './components/Layout.jsx';
 import PageTransition from './components/PageTransition.jsx';
 import Home from './pages/Home.jsx';
-import Projects from './pages/Projects.jsx';
-import Journey from './pages/Journey.jsx';
-import Achievements from './pages/Achievements.jsx';
-import StyleGuide from './pages/StyleGuide.jsx';
 import NotFound from './pages/NotFound.jsx';
+
+// Home loads with the site; the other pages download only when first opened.
+const Projects = lazy(() => import('./pages/Projects.jsx'));
+const Journey = lazy(() => import('./pages/Journey.jsx'));
+const Achievements = lazy(() => import('./pages/Achievements.jsx'));
+const StyleGuide = lazy(() => import('./pages/StyleGuide.jsx'));
+
+// Shown for the split second a page's code is downloading.
+function PageLoading() {
+  return <div className="min-h-screen" aria-busy="true" />;
+}
 
 const ROUTES = [
   { path: '/', element: <Home /> },
@@ -32,7 +40,15 @@ function AnimatedRoutes() {
     >
       <Routes location={location} key={location.pathname}>
         {ROUTES.map((route) => (
-          <Route key={route.path} path={route.path} element={<PageTransition>{route.element}</PageTransition>} />
+          <Route
+            key={route.path}
+            path={route.path}
+            element={
+              <Suspense fallback={<PageLoading />}>
+                <PageTransition>{route.element}</PageTransition>
+              </Suspense>
+            }
+          />
         ))}
       </Routes>
     </AnimatePresence>

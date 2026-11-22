@@ -1,0 +1,31 @@
+# Netlify settings. Netlify reads this file automatically when it builds the repo.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Single-page app: every address (/projects, /journey, …) serves index.html and
+# React Router shows the right page. Real files (images, scripts) are served
+# first because Netlify only applies this rule when no file matches.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Built JS/CSS/images have a content hash in their names, so browsers can keep
+# them for a year; a new deploy produces new file names.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
