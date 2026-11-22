@@ -20,6 +20,13 @@ export default function usePageMeta({ title, description, noindex = false }) {
     setMeta('meta[name="twitter:title"]', fullTitle);
     setMeta('meta[name="twitter:description"]', text);
 
+    // This page's own address, so search engines don't treat it as a copy of Home.
+    if (SITE.url) {
+      const pageUrl = new URL(window.location.pathname, SITE.url).href;
+      setMeta('meta[property="og:url"]', pageUrl);
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', pageUrl);
+    }
+
     let robots = document.querySelector('meta[name="robots"]');
     if (noindex) {
       if (!robots) {

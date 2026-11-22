@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /styleguide
+
+Sitemap: https://rainbow-tapioca-aab710.netlify.app/sitemap.xml

@@ -5,8 +5,8 @@ export const SITE = {
   defaultTitle: 'Nitish — Software Engineer · Full-Stack, Generative AI & ML',
   description:
     'Nitish — Software Development Engineer at Infinite Locus. Full-stack, Generative AI (Gemini, LangGraph, RAG) and ML & deep learning. M.Sc IIT Delhi, GATE 2026 AIR 5.',
-  // Live address of the site, set once it is deployed (Step 10), e.g. 'https://nitish.dev'.
-  url: '',
+  // Live address of the site (Netlify). Change it here if you add a custom domain.
+  url: 'https://rainbow-tapioca-aab710.netlify.app',
   email: 'nitishkathuria33@gmail.com',
   github: 'https://github.com/nitish331',
   linkedin: 'https://www.linkedin.com/in/nitish-kathuria-a584a41a6/',
