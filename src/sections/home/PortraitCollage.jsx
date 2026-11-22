@@ -62,7 +62,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
       </div>
 
       {/* Rotating text badge */}
-      <div className="glass absolute bottom-[8%] -left-7 grid size-[136px] place-items-center rounded-full shadow-[0_20px_50px_-20px_rgba(0,0,0,.6)]">
+      <div className="absolute bottom-[8%] -left-7 grid size-[136px] place-items-center rounded-full border border-black/10 bg-white shadow-[0_20px_50px_-20px_rgba(0,0,0,.6)]">
         <motion.svg
           aria-hidden="true"
           viewBox="0 0 200 200"
@@ -73,7 +73,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
           <defs>
             <path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
           </defs>
-          <text className="font-mono" fontSize="15.5" letterSpacing="3" fontWeight="500" fill="#E3E6FA">
+          <text className="font-mono" fontSize="15.5" letterSpacing="3" fontWeight="600" fill="#0C1029">
             <textPath href="#badge-circle">{badge}</textPath>
           </text>
         </motion.svg>
