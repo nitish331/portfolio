@@ -4,6 +4,7 @@ import ProjectMockup from '../../components/mockups/ProjectMockup.jsx';
 import Button from '../../components/ui/Button.jsx';
 import Icon from '../../components/ui/Icon.jsx';
 import { accent } from '../../data/accents.js';
+import { hasLink } from '../../data/projects.js';
 
 const EASE = [0.2, 0.8, 0.2, 1];
 
@@ -62,10 +63,14 @@ const ProjectRow = forwardRef(function ProjectRow({ project, number, flipped }, 
             <span key={tech} className="stack-tag">{tech}</span>
           ))}
         </div>
-        <div className="mt-auto flex flex-wrap gap-2.5 pt-2.5">
-          <Button href={project.links.live} icon="arrowUpRight">{project.primaryLabel}</Button>
-          <Button href={project.links.source} variant="glass" icon="github" iconPosition="left">Source code</Button>
-        </div>
+        {(hasLink(project.links.live) || hasLink(project.links.source)) && (
+          <div className="mt-auto flex flex-wrap gap-2.5 pt-2.5">
+            {hasLink(project.links.live) && <Button href={project.links.live} icon="arrowUpRight">{project.primaryLabel}</Button>}
+            {hasLink(project.links.source) && (
+              <Button href={project.links.source} variant="glass" icon="github" iconPosition="left">Source code</Button>
+            )}
+          </div>
+        )}
       </div>
     </motion.article>
   );

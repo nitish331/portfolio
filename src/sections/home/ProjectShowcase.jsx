@@ -5,7 +5,7 @@ import Button from '../../components/ui/Button.jsx';
 import Icon from '../../components/ui/Icon.jsx';
 import { Reveal } from '../../components/ui/Reveal.jsx';
 import SectionHeading from '../../components/ui/SectionHeading.jsx';
-import { PROJECTS } from '../../data/projects.js';
+import { hasLink, PROJECTS } from '../../data/projects.js';
 
 const SHOWCASE = PROJECTS.filter((project) => project.featured);
 const SLIDE_SECONDS = 6;
@@ -98,10 +98,16 @@ export default function ProjectShowcase() {
                             <span key={tech} className="stack-tag">{tech}</span>
                           ))}
                         </div>
-                        <div className="flex flex-wrap gap-2.5 pt-1">
-                          <Button href={item.links.live} size="sm" icon="arrowUpRight">{item.primaryLabel}</Button>
-                          <Button href={item.links.source} variant="glass" size="sm" icon="github" iconPosition="left">Source code</Button>
-                        </div>
+                        {(hasLink(item.links.live) || hasLink(item.links.source)) && (
+                          <div className="flex flex-wrap gap-2.5 pt-1">
+                            {hasLink(item.links.live) && (
+                              <Button href={item.links.live} size="sm" icon="arrowUpRight">{item.primaryLabel}</Button>
+                            )}
+                            {hasLink(item.links.source) && (
+                              <Button href={item.links.source} variant="glass" size="sm" icon="github" iconPosition="left">Source code</Button>
+                            )}
+                          </div>
+                        )}
                         {open && autoplay && (
                           <span aria-hidden="true" className="mt-1 block h-1 overflow-hidden rounded bg-white/10">
                             <span

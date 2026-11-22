@@ -1,6 +1,9 @@
 // Every project shown on Projects (full rows); `featured` ones also play in the Home showcase.
-// links.live / links.source: replace '#' with real URLs.
+// links.live / links.source: '#' hides that button; put a real URL to show it.
 // theme: background of the mockup panel.
+
+// True for a real link; '#' or empty means "no link yet", so the button is hidden.
+export const hasLink = (url) => Boolean(url) && url !== '#';
 
 export const PROJECT_FILTERS = [
   { id: 'all', label: 'All work' },
