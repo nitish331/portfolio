@@ -15,9 +15,9 @@ function Paper({ cert, large = false }) {
     // Scans are portrait pages: the wall card shows the top of the page,
     // the viewer shows the whole page.
     return large ? (
-      <img src={cert.image} alt={cert.title} className="mx-auto max-h-[64vh] w-auto rounded-lg bg-white object-contain" />
+      <img src={cert.image} alt={cert.title} className="mx-auto max-h-[64vh] w-auto rounded-lg object-contain" />
     ) : (
-      <img src={cert.image} alt="" className="size-full rounded-lg bg-white object-cover object-top" />
+      <img src={cert.image} alt="" className="size-full rounded-lg object-cover object-top" />
     );
   }
   return (

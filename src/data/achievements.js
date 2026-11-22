@@ -8,7 +8,7 @@ export const RANKS = [
     prefix: '#',
     label: 'All-India Rank',
     meta: '2026',
-    description: 'All-India Rank 5 in Physics, among thousands of candidates nationwide.',
+    description: 'All-India Rank 5 in Physics, out of 18,055 candidates.',
     accent: 'amber',
     icon: 'star',
   },
