@@ -2,7 +2,8 @@
 // (e.g. image: '/certificates/gate-2025.jpg' with the file in public/certificates/).
 
 export const CERTIFICATES = [
-  { id: 'gate', title: 'GATE 2025 Scorecard', short: 'GATE 2025', meta: 'AIR 36 · 2025', accent: 'amber', image: null },
+  { id: 'gate-2026', title: 'GATE 2026 Scorecard', short: 'GATE 2026', meta: 'AIR 5 · 2026', accent: 'amber', image: null },
+  { id: 'gate-2025', title: 'GATE 2025 Scorecard', short: 'GATE 2025', meta: 'AIR 36 · 2025', accent: 'violet', image: null },
   { id: 'csir-net', title: 'CSIR-UGC NET with JRF', short: 'CSIR-UGC NET', meta: 'AIR 86 · Dec 2024', accent: 'violet', image: null },
   { id: 'jam', title: 'IIT JAM 2024 Scorecard', short: 'IIT JAM 2024', meta: 'AIR 90 · 2024', accent: 'cyan', image: null },
   { id: 'ngpe', title: 'NGPE 2024 · National Top 1%', short: 'NGPE 2024', meta: 'IAPT · 2024', accent: 'mint', image: null },

@@ -4,7 +4,7 @@ export const SITE = {
   name: 'Nitish',
   defaultTitle: 'Nitish — Software Engineer · Full-Stack, Generative AI & ML',
   description:
-    'Nitish — Software Development Engineer at Infinite Locus. Full-stack, Generative AI (Gemini, LangGraph, RAG) and ML & deep learning. M.Sc IIT Delhi, GATE 2025 AIR 36.',
+    'Nitish — Software Development Engineer at Infinite Locus. Full-stack, Generative AI (Gemini, LangGraph, RAG) and ML & deep learning. M.Sc IIT Delhi, GATE 2026 AIR 5.',
   // Live address of the site, set once it is deployed (Step 10), e.g. 'https://nitish.dev'.
   url: '',
   email: 'nitishkathuria33@gmail.com',

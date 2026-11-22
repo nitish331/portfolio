@@ -11,7 +11,7 @@ export default function Achievements() {
   usePageMeta({
     title: 'Achievements',
     description:
-      'GATE 2025 AIR 36, CSIR-UGC NET AIR 86 with JRF, IIT JAM 2024 AIR 90, NGPE national top 1%: ranks, skills and certificates of Nitish.',
+      'GATE 2026 AIR 5, GATE 2025 AIR 36, CSIR-UGC NET AIR 86 with JRF, IIT JAM 2024 AIR 90, NGPE national top 1%: ranks, skills and certificates of Nitish.',
   });
   return (
     <>

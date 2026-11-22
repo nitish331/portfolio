@@ -2,15 +2,26 @@
 
 export const RANKS = [
   {
-    id: 'gate',
+    id: 'gate-2026',
+    exam: 'GATE 2026',
+    value: 5,
+    prefix: '#',
+    label: 'All-India Rank',
+    meta: '2026',
+    description: 'All-India Rank 5 in Physics, among thousands of candidates nationwide.',
+    accent: 'amber',
+    icon: 'star',
+  },
+  {
+    id: 'gate-2025',
     exam: 'GATE 2025',
     value: 36,
     prefix: '#',
     label: 'All-India Rank',
     meta: '2025',
-    description: 'All-India Rank among thousands of candidates nationwide.',
-    accent: 'amber',
-    icon: 'star',
+    description: 'All-India Rank 36 in Physics, out of 19,225 candidates.',
+    accent: 'violet',
+    icon: 'trending',
   },
   {
     id: 'csir-net',
@@ -69,7 +80,7 @@ export const RANKS = [
 
 // The four tiles on the Home page.
 export const HOME_STATS = [
-  { id: 'gate', eyebrow: 'GATE 2025', value: 36, prefix: '#', label: 'All-India Rank', accent: 'violet' },
+  { id: 'gate', eyebrow: 'GATE 2026', value: 5, prefix: '#', label: 'All-India Rank', accent: 'violet' },
   { id: 'csir-net', eyebrow: 'CSIR-UGC NET', value: 86, prefix: '#', label: 'AIR · with JRF', accent: 'cyan' },
   { id: 'jam', eyebrow: 'IIT JAM 2024', value: 90, prefix: '#', label: 'All-India Rank', accent: 'pink' },
   { id: 'cgpa', eyebrow: 'IIT Delhi · M.Sc', value: 9.35, decimals: 2, label: 'CGPA · Dept. Rank 3', accent: 'amber', featured: true },

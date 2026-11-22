@@ -31,7 +31,7 @@ const SWATCHES = [
 const FONTS = [
   { label: 'Display · Sora 800', className: 'font-display text-4xl font-extrabold tracking-[-0.04em]', sample: 'Full-Stack · GenAI · Deep Learning' },
   { label: 'Body · Manrope', className: 'font-sans text-lg text-muted', sample: 'I design and ship full-stack products, build Generative AI tools and train deep-learning models.' },
-  { label: 'Labels · JetBrains Mono', className: 'font-mono text-sm uppercase tracking-[0.08em] text-soft', sample: 'GATE 2025 · AIR 36' },
+  { label: 'Labels · JetBrains Mono', className: 'font-mono text-sm uppercase tracking-[0.08em] text-soft', sample: 'GATE 2026 · AIR 5' },
 ];
 
 const DATA_SUMMARY = [
@@ -173,7 +173,7 @@ export default function StyleGuide() {
             <p className="text-muted">Hover me: lifts with a violet glow.</p>
           </GlassCard>
           <GlassCard variant="gradient" className="flex flex-col gap-3 p-7">
-            <span className="gold-text font-display text-6xl leading-none font-extrabold">#36</span>
+            <span className="gold-text font-display text-6xl leading-none font-extrabold">#5</span>
             <h3 className="font-display text-xl font-bold">GlassCard · gradient</h3>
             <p className="text-muted">Dark panel with the aurora border.</p>
           </GlassCard>

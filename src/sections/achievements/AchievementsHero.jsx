@@ -59,7 +59,7 @@ export default function AchievementsHero({ topRank }) {
             </span>
           </div>
           <p className="max-w-[380px] text-[17px] leading-relaxed text-muted">
-            Plus a JRF in CSIR-UGC NET, AIR 90 in IIT JAM and a national top-1% finish in NGPE.
+            Plus AIR 36 in GATE 2025, a JRF in CSIR-UGC NET, AIR 90 in IIT JAM and a national top-1% finish in NGPE.
           </p>
         </motion.div>
       </div>
