@@ -11,7 +11,7 @@ export const PROFILE = {
     'Software Development Engineer at Infinite Locus. I build full-stack products with React, Node.js and Python, ship Generative AI features with Google Gemini, LangGraph and RAG, and train deep-learning models in TensorFlow. M.Sc, IIT Delhi.',
   badge: 'FULL-STACK • GEN AI • DEEP LEARNING • ',
   stickers: ['IIT Delhi', 'Gemini · LangGraph', 'React + Node', 'TensorFlow'],
-  location: '[YOUR CITY], India',
+  location: 'Barwala, Hisar',
   // Hero portrait (src/assets/portrait.webp). Set to null to show the placeholder.
   photo: portrait,
 };
