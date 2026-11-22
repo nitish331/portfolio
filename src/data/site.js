@@ -9,7 +9,7 @@ export const SITE = {
   url: '',
   email: 'nitishkathuria33@gmail.com',
   github: 'https://github.com/nitish331',
-  linkedin: '#',
+  linkedin: 'https://www.linkedin.com/in/nitish-kathuria-a584a41a6/',
   resume: 'https://drive.google.com/file/d/19fvFgc-nUBxcwVoBOY59jNp1lmNF4JrG/view?usp=sharing',
 };
 
