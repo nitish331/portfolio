@@ -147,11 +147,11 @@ function StandardCard({ entry }) {
         )}
 
         {entry.stats && (
-          <div className="grid grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
             {entry.stats.map((stat) => (
-              <div key={stat.label} className="glass flex flex-col gap-0.5 rounded-2xl p-3.5">
-                <span className="gradient-text font-display text-[clamp(22px,2.6vw,32px)] font-extrabold">{stat.value}</span>
-                <span className="text-[13px] text-muted">{stat.label}</span>
+              <div key={stat.label} className="glass flex min-w-0 flex-col gap-0.5 rounded-2xl p-2.5 sm:p-3.5">
+                <span className="gradient-text font-display text-[19px] font-extrabold whitespace-nowrap sm:text-[clamp(22px,2.6vw,32px)]">{stat.value}</span>
+                <span className="text-xs text-muted sm:text-[13px]">{stat.label}</span>
               </div>
             ))}
           </div>

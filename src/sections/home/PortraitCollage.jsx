@@ -6,11 +6,13 @@ import quadrature from '../../assets/quadrature.webp';
 // a rotating text badge and four floating glass stickers.
 
 const STICKER_DOTS = ['#F472B6', '#FBBF24', '#22D3EE', '#A78BFA'];
+// Stickers poke past the photo's edges only on large screens; below that they
+// stay inside the frame so phones and tablets don't cut them off.
 const STICKER_SPOTS = [
-  'top-[3%] -right-4 rotate-6',
-  'bottom-[24%] -right-6 -rotate-[5deg]',
-  'top-[26%] -left-6 -rotate-[8deg]',
-  'top-[52%] -left-8 rotate-[5deg]',
+  'top-[3%] right-1 lg:-right-4 rotate-6',
+  'bottom-[24%] right-1 lg:-right-6 -rotate-[5deg]',
+  'top-[26%] left-1 lg:-left-6 -rotate-[8deg]',
+  'top-[52%] left-1 lg:-left-8 rotate-[5deg]',
 ];
 
 export default function PortraitCollage({ photo, badge, stickers }) {
@@ -22,7 +24,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
 
   return (
     <motion.div
-      className="relative aspect-[4/5] w-full max-w-[470px]"
+      className="relative aspect-[4/5] w-[94%] max-w-[470px] sm:w-full"
       style={{ y: reduceMotion ? 0 : drift }}
       initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -62,7 +64,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
       </div>
 
       {/* Rotating text badge */}
-      <div className="absolute bottom-[8%] -left-7 grid size-[136px] place-items-center rounded-full border border-black/10 bg-white shadow-[0_20px_50px_-20px_rgba(0,0,0,.6)]">
+      <div className="absolute bottom-[8%] left-1 grid size-[112px] place-items-center rounded-full border border-black/10 bg-white shadow-[0_20px_50px_-20px_rgba(0,0,0,.6)] sm:size-[136px] lg:-left-7">
         <motion.svg
           aria-hidden="true"
           viewBox="0 0 200 200"
@@ -77,7 +79,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
             <textPath href="#badge-circle">{badge}</textPath>
           </text>
         </motion.svg>
-        <span className="grid size-[52px] place-items-center rounded-full bg-linear-to-br from-violet to-cyan text-on-accent">
+        <span className="grid size-11 place-items-center rounded-full bg-linear-to-br from-violet to-cyan text-on-accent sm:size-[52px]">
           <Icon name="sparkle" size={24} />
         </span>
       </div>
@@ -86,7 +88,7 @@ export default function PortraitCollage({ photo, badge, stickers }) {
       {stickers.map((label, i) => (
         <motion.span
           key={label}
-          className={`chip absolute border border-white/14 bg-panel/90 backdrop-blur-md text-sm shadow-[0_12px_30px_-12px_rgba(0,0,0,.6)] ${STICKER_SPOTS[i % STICKER_SPOTS.length]}`}
+          className={`chip absolute border border-white/14 bg-panel/90 text-xs shadow-[0_12px_30px_-12px_rgba(0,0,0,.6)] backdrop-blur-md sm:text-sm ${STICKER_SPOTS[i % STICKER_SPOTS.length]}`}
           animate={reduceMotion ? undefined : { y: [0, -14, 0] }}
           transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut', delay: i * 1.5 }}
         >

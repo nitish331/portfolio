@@ -77,11 +77,12 @@
   a {
     color: inherit;
   }
-  /* Body text is justified (flush left and right) site-wide. Hyphenation keeps
-     narrow phone columns free of big word gaps. A text-center / text-left class
-     on an element still wins, because utilities override this base rule. */
+  /* Body text is justified (flush left and right) site-wide: paragraphs and
+     bullet-point lists (ul), but not ordered lists such as the Journey timeline,
+     whose items contain headings. Hyphenation keeps narrow phone columns free of
+     big word gaps. A text-center / text-left class still wins over this rule. */
   p,
-  li {
+  ul > li {
     text-align: justify;
     hyphens: auto;
     -webkit-hyphens: auto;
