@@ -12,7 +12,13 @@ const EASE = [0.2, 0.8, 0.2, 1];
 // The certificate itself: a framed "paper", or the scanned image once provided.
 function Paper({ cert, large = false }) {
   if (cert.image) {
-    return <img src={cert.image} alt={cert.title} className="size-full rounded-lg bg-[#F7F5EE] object-contain" />;
+    // Scans are portrait pages: the wall card shows the top of the page,
+    // the viewer shows the whole page.
+    return large ? (
+      <img src={cert.image} alt={cert.title} className="mx-auto max-h-[64vh] w-auto rounded-lg bg-white object-contain" />
+    ) : (
+      <img src={cert.image} alt="" className="size-full rounded-lg bg-white object-cover object-top" />
+    );
   }
   return (
     <div
@@ -103,7 +109,10 @@ function Lightbox({ cert, onClose, returnFocusTo }) {
           </button>
         </div>
         <div className="px-7 pb-7">
-          <div className="aspect-[1.414/1] rounded-[14px] p-[clamp(16px,3vw,32px)]" style={{ background: accent(cert.accent).gradient }}>
+          <div
+            className={`rounded-[14px] p-[clamp(12px,2.5vw,28px)] ${cert.image ? 'flex justify-center' : 'aspect-[1.414/1]'}`}
+            style={{ background: accent(cert.accent).gradient }}
+          >
             <Paper cert={cert} large />
           </div>
         </div>
@@ -138,7 +147,7 @@ export default function CertificateWall({ certificates }) {
             whileHover={{ rotate: 0, y: -10, scale: 1.02, boxShadow: '0 40px 80px -30px rgba(124,92,255,.7)' }}
             transition={{ duration: 0.45, ease: EASE }}
           >
-            <div className="aspect-[1.414/1] p-[18px]" style={{ background: accent(cert.accent).gradient }}>
+            <div className="aspect-[1.414/1] overflow-hidden p-[18px]" style={{ background: accent(cert.accent).gradient }}>
               <Paper cert={cert} />
             </div>
             <div className="flex items-center justify-between gap-3 px-5 py-[18px]">
